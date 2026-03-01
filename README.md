@@ -1,8 +1,21 @@
 # Climate Web App - Final Year Project
 
-![Climate Web App Banner](https://images.unsplash.com/photo-1611273426858-450d8e811500?q=80&w=2070&auto=format&fit=crop)
-
 Welcome to the **Climate Web App** repository! This project serves as a comprehensive web application integrating a machine learning model to analyze and predict climate-related data. The project consists of a client interface, a server to handle API requests, and a machine learning module for predictions.
+
+## Architecture Overview
+
+```mermaid
+graph TD
+    Client[Client / Frontend UI]
+    Server[Node.js / Express Server]
+    ML[Python ML Model]
+    DB[(Database / Dataset)]
+
+    Client <-->|API Requests / JSON Responses| Server
+    Server -->|Runs inference script| ML
+    ML -->|Loads Model / Reads Data| DB
+    Server <-->|Reads/Writes Data| DB
+```
 
 ## Project Structure
 
